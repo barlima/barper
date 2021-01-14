@@ -1,0 +1,172 @@
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.wrapper::before {
+  content: "";
+  width: calc(2 * 100vw);
+  min-width: calc(120vh);
+  height: 200vh;
+  position: absolute;
+  top: -50vh;
+  left: -50vw;
+  background: url("../images/night-sky.jpg");
+  background-size: cover;
+  opacity: 0.5;
+  animation: spin 60s linear infinite;
+  clip-path: circle(40%);
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.content {
+  position: relative;
+  height: 100vh;
+}
+
+.title {
+  position: absolute;
+  bottom: 40px;
+  left: 50px;
+
+  @include respond-to("small") {
+    bottom: 10vh;
+    left: 30px;
+  }
+}
+
+.name {
+  color: $white;
+  margin: 0;
+  margin-bottom: -5px;
+  margin-left: -5px;
+
+  @include respond-to("small") {
+    font-size: $xl;
+  }
+}
+
+.webDev {
+  color: $grey;
+  font-weight: 300;
+  margin: 0;
+
+  @include respond-to("small") {
+    font-size: $m;
+  }
+}
+
+.media {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 7.5rem;
+  justify-content: space-between;
+  bottom: 40px;
+  right: 50px;
+
+  & * {
+    color: $grey;
+    font-size: 1.5rem;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  @include respond-to("small") {
+    right: 30px;
+    left: 30px;
+    bottom: 20px;
+    flex-direction: row;
+    height: auto;
+  }
+}
+
+.logo {
+  position: absolute;
+  top: 40px;
+  right: 50px;
+
+  @include respond-to("small") {
+    top: 20px;
+    right: 30px;
+  }
+}
+
+@keyframes changeLetter {
+  0% {
+    content: "W_";
+  }
+  5% {
+    content: "We_";
+  }
+  10% {
+    content: "Web_";
+  }
+  15% {
+    content: "Web_";
+  }
+  20% {
+    content: "Web _";
+  }
+  25% {
+    content: "Web D_";
+  }
+  30% {
+    content: "Web De_";
+  }
+  35% {
+    content: "Web Dev_";
+  }
+  40% {
+    content: "Web Deve_";
+  }
+  45% {
+    content: "Web Devel_";
+  }
+  50% {
+    content: "Web Develp_";
+  }
+  55% {
+    content: "Web Develpo_";
+  }
+  60% {
+    content: "Web Develpop_";
+  }
+  70% {
+    content: "Web Develpo_";
+  }
+  70% {
+    content: "Web Develp_";
+  }
+  75% {
+    content: "Web Devel_";
+  }
+  80% {
+    content: "Web Develo_";
+  }
+  90% {
+    content: "Web Develop_";
+  }
+  95% {
+    content: "Web Develope_";
+  }
+  100% {
+    content: "Web Developer_";
+  }
+}
+
+.webDev::after {
+  content: "_";
+  animation: changeLetter 3s linear forwards;
+  animation-delay: 1s;
+}

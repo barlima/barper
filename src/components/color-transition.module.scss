@@ -1,0 +1,29 @@
+.wrapper {
+  width: 100vw;
+  height: 300vh;
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    #00000000 0%,
+    $black 10%,
+    $oxford-blue 30%,
+    $roydal-dark-blue 45%,
+    $st-patrics-blue 60%,
+    $cyber-purple 75%,
+    $cyber-grape 90%,
+    $french-lilac 100%
+  );
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 40px;
+  width: 100%;
+  padding: 0 50px;
+
+  @include respond-to("small") {
+    padding: 0 30px;
+  }
+}

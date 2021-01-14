@@ -1,0 +1,19 @@
+// media break
+
+$smallBreak: 700px;
+$mediumBreak: 1000px;
+
+$breakpoints: (
+  "small": (
+    max-width: $smallBreak,
+  ),
+  "medium": (
+    max-width: $mediumBreak,
+  ),
+) !default;
+
+// font size
+$m: 2rem;
+$l: 3rem;
+$xl: 4rem;
+$xxl: 5rem;
